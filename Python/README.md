@@ -112,4 +112,4 @@ Recursion for this small size has a fairly equivalent speed to the iterative met
 
 > Python to Rust Speed Ratio: ~ 1300:1
 
-[Back to main page](https://github.com/ocoffey/rust_ffi_test, "Main Page")
+[Back to main page](https://github.com/ocoffey/rust_ffi_test "Main Page")
