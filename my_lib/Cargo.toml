@@ -1,0 +1,8 @@
+[package]
+name = "myLib"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "embed"
+crate-type = ["dylib"]
