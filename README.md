@@ -65,6 +65,7 @@ pub extern fn recursive_multiplication(a: usize, b: usize) -> usize {
 ## Links to Implementations by Language
 
 * [Python](https://github.com/ocoffey/rust_ffi_test/tree/master/Python/README.md "Python Implementation")
+* [Ruby](https://github.com/ocoffey/rust_ffi_test/tree/master/Ruby/README.md "Ruby Implementation")
 
 ## Notes
 
