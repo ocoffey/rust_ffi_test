@@ -1,4 +1,14 @@
 const {performance} = require('perf_hooks');
+/*
+var ffi = require('ffi');
+
+var lib = ffi.Library('../my_lib/target/release/libembed', {
+    'recursive_multiplication': [ 'int', [ 'int', 'int' ] ],
+    'iterative_multiplication': [ 'int', [ 'int', 'int' ] ]
+})
+
+console.log(lib.recursive_multiplication(3,5))
+*/
 
 function iterative_mult(a, b) {
     var sum = 0;
@@ -25,7 +35,13 @@ for (const size in sizes) {
     iterative_mult(sizes[size][0], sizes[size][1]);
     var tock = performance.now();
     console.log(`Input Sizes: ${sizes[size][0]}, ${sizes[size][1]}`);
-    console.log(`Javascript Time: ${((tock-tick) / 1000).toFixed(10)}\n`);
+    console.log(`Javascript Time:   ${((tock-tick) / 1000).toFixed(10)}\n`);
+    /*
+    var tick = performance.now();
+    lib.iterative_multiplication(sizes[size][0], sizes[size][1]);
+    var tock = performance.now();
+    console.log(`Rust Time:   ${((tock-tick) / 1000).toFixed(10)}\n`);
+    */
 }
 
 // check recursive
@@ -36,16 +52,10 @@ for (const size in sizes) {
     var tock = performance.now();
     console.log(`Input Sizes: ${sizes[size][0]}, ${sizes[size][1]}`);
     console.log(`Javascript Time: ${((tock-tick) / 1000).toFixed(10)}\n`);
+    /*
+    var tick = performance.now();
+    lib.recursive_multiplication(sizes[size][0], sizes[size][1]);
+    var tock = performance.now();
+    console.log(`Rust Time:   ${((tock-tick) / 1000).toFixed(10)}\n`);
+    */
 }
-
-
-/*
-var ffi = require('ffi');
-
-var lib = ffi.Library('../my_lib/target/release/libembed', {
-    'recursive_multiplication': [ 'int', [ 'int', 'int' ] ],
-    'iterative_multiplication': [ 'int', [ 'int', 'int' ] ]
-})
-
-console.log(lib.recursive_multiplication(3,5))
-*/
